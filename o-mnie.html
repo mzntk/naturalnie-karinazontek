@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O mnie | Naturalnie. Karina Zontek</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* BAZOWE STYLE - IDENTYCZNE JAK W INDEX.HTML */
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            background-color: #faf9f6;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Libre Baskerville', serif;
+            color: #17687A;
+            font-weight: 700;
+        }
+
+        /* NAGŁÓWEK I MENU */
+        header {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        header h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #666;
+            margin: 0 15px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: #17687A;
+        }
+
+        /* GŁÓWNA ZAWARTOŚĆ STRONY */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background-color: #ffffff;
+            margin-bottom: 40px;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        /* SEKCJA POWITALNA (HERO) W O MNIE */
+        .hero {
+            background-color: #CCD8C7;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 0;
+            color: #17687A;
+        }
+
+        /* WSTĘP ZE ZDJĘCIEM */
+        .intro-section {
+            display: flex; 
+            align-items: center; 
+            gap: 40px; 
+            text-align: left; 
+        }
+
+        .intro-text {
+            flex: 1; 
+        }
+
+        .intro-image {
+            flex: 1; 
+        }
+
+        .intro-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* SEKCJE Z OPISEM (Wykształcenie, Doświadczenie itd.) */
+        .bio-details {
+            text-align: left;
+        }
+
+        .bio-details h2 {
+            border-bottom: 2px solid #CCD8C7;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        .bio-details p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #444;
+        }
+
+        /* IKONA I LINK DO INSTAGRAMA */
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 15px;
+            font-size: 16px;
+            color: #17687A;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .social-link:hover {
+            color: #114e5c;
+        }
+
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            border-radius: 0;
+            transition: transform 0.3s;
+        }
+
+        .social-link:hover .social-icon {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .intro-section {
+                flex-direction: column; 
+                text-align: center;
+            }
+            .bio-details {
+                text-align: center;
+            }
+        }
+
+        /* STOPKA */
+        footer {
+            background-color: #17687A;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        
+        footer .social-link {
+            color: #ffffff;
+            font-weight: normal;
+        }
+        
+        footer .social-link:hover {
+            color: #CCD8C7;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>Naturalnie. Karina Zontek</h2>
+        <nav>
+            <a href="index.html">Strona Główna</a>
+            <a href="o-mnie.html" class="active">O mnie</a>
+            <a href="zabiegi.html">Zabiegi</a>
+            <a href="cennik.html">Cennik</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Poznajmy się</h1>
+        </section>
+
+        <section class="intro-section">
+            <div class="intro-image">
+                <img src="karina-z-tlem.png" alt="Karina Zontek - Kosmetolog i Naturoterapeuta">
+            </div>
+            <div class="intro-text">
+                <h2>Cześć, jestem Karina!</h2>
+                <p>Bardzo się cieszę, że tu jesteś. Stworzyłam to miejsce z myślą o osobach, które szukają czegoś więcej niż tylko standardowych zabiegów. Moje podejście opiera się na głębokim zrozumieniu potrzeb Twojego organizmu.</p>
+                
+                <a href="https://instagram.com/karina_zontek_naturalnie" target="_blank" class="social-link">
+                    <img src="logo-instagram.png" alt="Instagram" class="social-icon"> Codzienna dawka wiedzy na Instagramie
+                </a>
+            </div>
+        </section>
+
+        <section class="bio-details">
+            
+            <h2>Moja misja i filozofia pracy</h2>
+            <p>Opis w trakcie przygotowywania...</p>
+
+            <h2>Wykształcenie</h2>
+            <p>Opis w trakcie przygotowywania...</p>
+
+            <h2>Doświadczenie zawodowe</h2>
+            <p>Opis w trakcie przygotowywania...</p>
+
+            <h2>Moja droga z celiakią</h2>
+            <p>Opis w trakcie przygotowywania...</p>
+
+            <h2>Naturoterapia – holistyczne spojrzenie</h2>
+            <p>Opis w trakcie przygotowywania...</p>
+
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>Naturalnie. Karina Zontek</strong></p>
+        <p>Telefon: +48 606 615 472 | Email: karina.zontek@icloud.com</p>
+        <p>Lokalizacja: Międzyrzecze Górne</p>
+        
+        <p>
+            <a href="https://instagram.com/karina_zontek_naturalnie" target="_blank" class="social-link">
+                <img src="logo-instagram.png" alt="Instagram" class="social-icon"> @karina_zontek_naturalnie
+            </a>
+        </p>
+        
+        <p>&copy; 2026 Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naturalnie. Karina Zontek | Kosmetologia i Naturoterapia</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* BAZOWE STYLE */
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            background-color: #faf9f6;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Libre Baskerville', serif;
+            color: #17687A;
+            font-weight: 700;
+        }
+
+        /* NAGŁÓWEK I MENU - UJEDNOLICONE */
+        header {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 30px 20px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        header h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #666;
+            margin: 0 15px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: #17687A;
+        }
+
+        /* GŁÓWNA ZAWARTOŚĆ STRONY */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background-color: #ffffff;
+            margin-bottom: 40px;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .clinic-photo {
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* SEKCJA POWITALNA (HERO) */
+        .hero {
+            background-color: #CCD8C7;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #17687A;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+
+        button {
+            background-color: #17687A;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-family: 'Lato', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #114e5c;
+            transform: translateY(-2px);
+        }
+
+        /* SEKCJA O MNIE */
+        .about-section {
+            display: flex; 
+            align-items: center; 
+            gap: 40px; 
+            text-align: left; 
+        }
+
+        .about-text {
+            flex: 1; 
+        }
+
+        .about-image {
+            flex: 1; 
+        }
+
+        .about-image img {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                flex-direction: column; 
+                text-align: center;
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #faf9f6;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 5px solid #17687A;
+            text-align: left;
+        }
+
+        a {
+            color: #17687A;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* IKONA I LINK DO INSTAGRAMA */
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 15px;
+            font-size: 16px;
+            color: #17687A;
+        }
+
+        .social-link:hover {
+            color: #114e5c;
+            text-decoration: none;
+        }
+
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            border-radius: 0;
+            transition: transform 0.3s;
+        }
+
+        .social-link:hover .social-icon {
+            transform: scale(1.1);
+        }
+
+        /* STOPKA */
+        footer {
+            background-color: #17687A;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        
+        footer .social-link {
+            color: #ffffff;
+            font-weight: normal;
+        }
+        
+        footer .social-link:hover {
+            color: #CCD8C7;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>Naturalnie. Karina Zontek</h2>
+        <nav>
+            <a href="index.html" class="active">Strona Główna</a>
+            <a href="o-mnie.html">O mnie</a>
+            <a href="zabiegi.html">Zabiegi</a>
+            <a href="cennik.html">Cennik</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </header>
+
+    <main>
+        <img src="poziome-na-strone-lazurszalwia.png" alt="Wnętrze gabinetu Naturalnie." class="clinic-photo">
+
+        <section class="hero">
+            <h1>Holistyczne podejście do Twojego piękna i zdrowia</h1>
+            <p>Odkryj harmonię dzięki połączeniu nowoczesnej kosmetologii i sprawdzonej naturoterapii.</p>
+            <a href="kontakt.html"><button>Umów wizytę</button></a>
+        </section>
+
+        <section class="about-section">
+            <div class="about-image">
+                <img src="karina-z-tlem.png" alt="Karina Zontek - Kosmetolog i Naturoterapeuta">
+            </div>
+            <div class="about-text">
+                <h2>Witaj w moim gabinecie</h2>
+                <p>Nazywam się Karina Zontek – jestem kosmetologiem z wieloletnim doświadczeniem oraz naturoterapeutą. Pomagam zarówno Twojej skórze, jak i całemu organizmowi wrócić do naturalnej równowagi. W swojej pracy kieruję się w pełni holistycznym i indywidualnym podejściem, dlatego każdą terapię rozpoczynam od szczegółowej konsultacji. Zapraszam Cię do mojego świata, jeśli zależy Ci na zdrowym, naturalnym wyglądzie i jesteś gotowa/gotowy na świadome, stopniowe zmiany w swoim stylu życia.</p>
+                <br>
+                <a href="o-mnie.html">Dowiedz się więcej o moim doświadczeniu &rarr;</a>
+                <br>
+                <a href="https://instagram.com/karina_zontek_naturalnie" target="_blank" class="social-link">
+                    <img src="logo-instagram.png" alt="Instagram" class="social-icon"> Śledź mnie na Instagramie
+                </a>
+            </div>
+        </section>
+
+        <section>
+            <h2>W czym mogę Ci pomóc?</h2>
+            <ul>
+                <li><strong>Kosmetologia Estetyczna:</strong> Nowoczesne zabiegi odmładzające i pielęgnacyjne, dobrane do potrzeb Twojej skóry.</li>
+                <li><strong>Naturoterapia:</strong> Holistyczne metody przywracania równowagi organizmu, relaksacja i naturalne wspomaganie zdrowia.</li>
+                <li><strong>Konsultacje Indywidualne:</strong> Dobór optymalnej pielęgnacji domowej oraz ułożenie spersonalizowanego planu zabiegowego.</li>
+            </ul>
+            <br>
+            <a href="zabiegi.html">Zobacz pełną ofertę zabiegów &rarr;</a>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>Naturalnie. Karina Zontek</strong></p>
+        <p>Telefon: +48 606 615 472 | Email: karina.zontek@icloud.com</p>
+        <p>Lokalizacja: Międzyrzecze Górne</p>
+        
+        <p>
+            <a href="https://instagram.com/karina_zontek_naturalnie" target="_blank" class="social-link">
+                <img src="logo-instagram.png" alt="Instagram" class="social-icon"> @karina_zontek_naturalnie
+            </a>
+        </p>
+        
+        
+        
+        <p style="font-size: 12px; margin-top: 10px;">&copy; 2026 Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+</body>
+</html>
