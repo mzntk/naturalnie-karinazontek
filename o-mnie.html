@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
-        /* BAZOWE STYLE - IDENTYCZNE JAK W INDEX.HTML */
+        /* BAZOWE STYLE */
         body {
             font-family: 'Lato', sans-serif;
             color: #333;
@@ -24,18 +24,35 @@
             font-weight: 700;
         }
 
-        /* NAGŁÓWEK I MENU */
+        /* NAGŁÓWEK "PRZYKLEJONY" DO GÓRY (STICKY) */
         header {
             background-color: #ffffff;
             text-align: center;
-            padding: 30px 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 20px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+            position: sticky; 
+            top: 0;
+            z-index: 1000; 
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px; 
+            margin-bottom: 10px;
+        }
+
+        .main-logo {
+            height: 50px; 
+            width: auto;
+            border-radius: 0; 
+            box-shadow: none; 
         }
 
         header h2 {
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 28px;
+            margin: 0;
+            font-size: 26px;
             letter-spacing: 1px;
         }
 
@@ -51,6 +68,50 @@
 
         nav a:hover, nav a.active {
             color: #17687A;
+        }
+
+        /* PRZYCISK BOOKSY - WSPÓLNE STYLE KOLORYSTYCZNE */
+        .btn-booksy {
+            display: inline-block;
+            background-color: #17687A; 
+            color: #ffffff !important; 
+            border-radius: 30px;
+            font-weight: bold;
+            border: 2px solid #17687A;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s;
+        }
+
+        .btn-booksy:hover {
+            background-color: #CCD8C7; 
+            color: #17687A !important; 
+            border-color: #CCD8C7;
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+
+        /* Wersja w menu głównym (mniejsza) */
+        nav .btn-booksy {
+            padding: 8px 25px;
+            margin-left: 20px;
+        }
+
+        /* Wersja w tekście i na dole (większa) */
+        .btn-booksy-large {
+            padding: 15px 30px;
+            font-size: 16px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Mniejsza wersja do sekcji wstępnej */
+        .btn-booksy-intro {
+            padding: 12px 25px;
+            margin-bottom: 15px;
+            margin-top: 10px;
+            text-transform: uppercase;
         }
 
         /* GŁÓWNA ZAWARTOŚĆ STRONY */
@@ -114,11 +175,41 @@
             padding-bottom: 10px;
             margin-top: 40px;
         }
+        
+        .bio-details h3 {
+            font-family: 'Lato', sans-serif;
+            font-size: 20px;
+            color: #17687A;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
 
         .bio-details p {
             margin-bottom: 20px;
             font-size: 16px;
             color: #444;
+        }
+
+        /* LISTY WYPUNKTOWANE */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 25px;
+        }
+
+        ul li {
+            background-color: #faf9f6;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 5px solid #17687A;
+            text-align: left;
+            color: #444;
+            font-size: 16px;
+        }
+
+        ul li strong {
+            color: #17687A;
         }
 
         /* IKONA I LINK DO INSTAGRAMA */
@@ -148,12 +239,45 @@
             transform: scale(1.1);
         }
 
+        /* 📱 OPTYMALIZACJA NA TELEFONY KOMÓRKOWE (SMARTFONY) */
         @media (max-width: 768px) {
+            main {
+                padding: 10px;
+            }
+            section {
+                padding: 30px 20px; 
+            }
+            .header-top {
+                flex-direction: column; 
+                gap: 5px;
+            }
+            nav a {
+                display: inline-block;
+                margin: 8px 10px;
+                font-size: 14px; 
+            }
+            nav .btn-booksy {
+                display: block;
+                margin: 15px auto 5px auto;
+                width: 80%; 
+                text-align: center;
+                padding: 12px 0;
+            }
+            header h2 {
+                font-size: 24px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
             .intro-section {
                 flex-direction: column; 
                 text-align: center;
             }
             .bio-details {
+                text-align: left;
+            }
+            .btn-booksy-intro, .btn-booksy-large {
+                display: block;
                 text-align: center;
             }
         }
@@ -172,11 +296,21 @@
             font-size: 14px;
         }
         
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: normal;
+        }
+        
+        footer a:hover {
+            color: #CCD8C7;
+        }
+
         footer .social-link {
             color: #ffffff;
             font-weight: normal;
         }
-        
+
         footer .social-link:hover {
             color: #CCD8C7;
         }
@@ -185,13 +319,17 @@
 <body>
 
     <header>
-        <h2>Naturalnie. Karina Zontek</h2>
+        <div class="header-top">
+            <h2>Naturalnie. Karina Zontek</h2>
+        </div>
         <nav>
             <a href="index.html">Strona Główna</a>
             <a href="o-mnie.html" class="active">O mnie</a>
             <a href="zabiegi.html">Zabiegi</a>
             <a href="cennik.html">Cennik</a>
             <a href="kontakt.html">Kontakt</a>
+            <!-- ZŁOTY PRZYCISK BOOKSY -->
+            <a href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" class="btn-booksy">Umów się</a>
         </nav>
     </header>
 
@@ -208,6 +346,9 @@
                 <h2>Cześć, jestem Karina!</h2>
                 <p>Bardzo się cieszę, że tu jesteś. Stworzyłam to miejsce z myślą o osobach, które szukają czegoś więcej niż tylko standardowych zabiegów. Moje podejście opiera się na głębokim zrozumieniu potrzeb Twojego organizmu.</p>
                 
+                <a href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" class="btn-booksy btn-booksy-intro">Umów się na wizytę</a>
+                <br>
+                
                 <a href="https://instagram.com/karina_zontek_naturalnie" target="_blank" class="social-link">
                     <img src="logo-instagram.png" alt="Instagram" class="social-icon"> Codzienna dawka wiedzy na Instagramie
                 </a>
@@ -217,26 +358,70 @@
         <section class="bio-details">
             
             <h2>Moja misja i filozofia pracy</h2>
-            <p>Opis w trakcie przygotowywania...</p>
+            <p>Wierzę, że zdrowie i piękno zaczynają się wewnątrz, a skóra jest jedynie posłańcem pokazującym kondycję całego organizmu. Jako kosmetolog i naturoterapeuta patrzę na człowieka jak na nierozerwalną całość. Nie zajmuję się maskowaniem objawów, lecz szukam ich głębokiej przyczyny, aby pomóc Ci odzyskać pełną harmonię – mądrze, bezpiecznie i trwale.</p>
+            <ul>
+                <li><strong>Bez dróg na skróty:</strong> Szybkie, inwazyjne rozwiązania to najczęściej tylko chwilowa iluzja naprawy. Prawdziwa, biologiczna regeneracja organizmu wymaga czasu i cierpliwości, ale w zamian daje autentyczne i długofalowe rezultaty.</li>
+                <li><strong>Ciało jako jeden ekosystem:</strong> Nie dzielę człowieka na odrębne fragmenty. Łączę kondycję Twojej cery z pracą układu pokarmowego, poziomem stresu, emocjami i stylem życia. Skupiam się na całości, bo tylko wtedy terapia ma sens.</li>
+                <li><strong>Współpraca z Twoją naturą:</strong> Twój organizm posiada genialną, wrodzoną zdolność do samonaprawy. Zamiast z nim walczyć czy zmuszać go do nienaturalnych reakcji, dostarczam mu odpowiedniego wsparcia – by sam mógł odzyskać siły, odporność i witalność.</li>
+            </ul>
+            <p>Przywróćmy Twojemu ciału naturalną równowagę. Z szacunkiem do jego potrzeb i na Twoich zasadach.</p>
 
-            <h2>Wykształcenie</h2>
-            <p>Opis w trakcie przygotowywania...</p>
+            <h2>Wykształcenie i Kwalifikacje</h2>
+            <p>Moja praca opiera się na solidnych fundamentach wiedzy akademickiej i medycznej. Nieustannie łączę kompetencje z zakresu profesjonalnej pielęgnacji skóry z holistycznym podejściem do zdrowia całego organizmu.</p>
+            <ul>
+                <li><strong>Dyplomowany Kosmetolog</strong> – wykształcenie wyższe, które dało mi głęboką wiedzę o fizjologii, biochemii oraz zaawansowanych procesach zachodzących w tkankach.</li>
+                <li><strong>Naturopata</strong> – tytuł zawodowy potwierdzający moje kompetencje w pracy z organizmem jako całością i wykorzystywaniu naturalnych metod wspierania regeneracji.</li>
+                <li><strong>Technik usług kosmetycznych</strong> – praktyczna baza i rzetelne przygotowanie do wykonywania profesjonalnych procedur zabiegowych.</li>
+            </ul>
 
             <h2>Doświadczenie zawodowe</h2>
-            <p>Opis w trakcie przygotowywania...</p>
+            <p>Moja droga zawodowa to lata praktyki oraz dzielenia się wiedzą z profesjonalistami z branży beauty. Przez wiele lat pracowałam jako szkoleniowiec, ucząc kadrę gabinetów kosmetologicznych zaawansowanych procedur zabiegowych oraz sztuki prowadzenia rzetelnych, merytorycznych konsultacji.</p>
+            <p>To właśnie tysiące godzin spędzonych na analizie przypadków i edukowaniu innych utwierdziły mnie w przekonaniu, że w pielęgnacji nie ma dróg na skróty. Zrozumiałam, że prawdziwe i trwałe efekty można osiągnąć tylko wtedy, gdy przestaniemy zmuszać organizm do zmian, a zaczniemy z nim współpracować.</p>
+            <p>Postanowiłam pójść własną drogą i stworzyć miejsce, które jest odpowiedzią na potrzeby osób szukających czegoś więcej niż standardowa usługa. Mój gabinet to przestrzeń oparta na:</p>
+            <ul>
+                <li><strong>Głębokim doświadczeniu edukacyjnym</strong> – wiedza, którą przekazywałam innym, dziś służy moim klientom w zrozumieniu procesów zachodzących w ich ciele.</li>
+                <li><strong>Poszanowaniu biologii</strong> – każda terapia, którą projektuję, szanuje naturalny rytm funkcjonowania skóry i całego organizmu.</li>
+                <li><strong>Indywidualnej diagnostyce</strong> – lata nauki prowadzenia konsultacji pozwalają mi na wnikliwe spojrzenie na każdy problem, szukając jego źródła, a nie tylko maskując objawy.</li>
+            </ul>
+            <p>Dzisiaj moją wiedzę szkoleniową i pasję do naturoterapii przekuwam w autorskie programy naprawcze. Wierzę, że powrót do korzeni i zrozumienie własnej fizjologii to jedyna droga do zdrowia i autentycznego piękna.</p>
 
             <h2>Moja droga z celiakią</h2>
-            <p>Opis w trakcie przygotowywania...</p>
+            <p>Moja osobista podróż w stronę holistycznego zdrowia zaczęła się w 2017 roku. To wtedy usłyszałam diagnozę: celiakia. Początki wymagały ogromnej cierpliwości – nauka czytania etykiet, eliminowanie ukrytego glutenu i całkowita zmiana myślenia o jedzeniu. Kuchnia, która wcześniej była miejscem rutyny, stała się polem ciągłych eksperymentów i kulinarnych przygód. Zrozumiałam wtedy, że zmiana diety to nie kara, ale absolutna podstawa powrotu do równowagi.</p>
+            <p>W 2022 roku życie postawiło przede mną kolejne wyzwanie – celiakię zdiagnozowano u mojej córki. Jako matka musiałam zorganizować naszą rzeczywistość na nowo. Zamiast polegać na szkolnym kateringu i ryzykować jej zdrowie, postanowiłam wziąć pełną odpowiedzialność za to, co je. Każdego dnia samodzielnie gotuję i przygotowuję dla niej wszystkie posiłki.</p>
+            <p>Wymaga to potężnego zaangażowania, żelaznej dyscypliny i nieustannego planowania logistyki – od codziennych, w 100% bezpiecznych śniadaniówek, po przygotowywanie pełnego, dedykowanego prowiantu na każdą wycieczkę klasową czy wyjazd. To codzienna lekcja uważności.</p>
+            
+            <h3>Dlaczego o tym wspominam na stronie gabinetu?</h3>
+            <p>To właśnie te lata doświadczeń ukształtowały moją filozofię pracy. Wiem, ile wysiłku kosztuje dbanie o zdrowie przy chorobie przewlekłej. Rozumiem, co czujesz, gdy Twoja codzienność wymaga wyrzeczeń, a organizm domaga się szczególnego traktowania.</p>
+            <p>Moja osobista droga pokazała mi w praktyce to, czym dziś kieruję się w pracy z pacjentami:</p>
+            <ul>
+                <li><strong>Organizm to naczynie połączone</strong> – jelita i to, czym karmimy nasze ciało, bezpośrednio manifestują się na naszej skórze i w naszym samopoczuciu.</li>
+                <li><strong>Nie ma dróg na skróty</strong> – proces zdrowienia, regeneracji skóry czy powrotu do formy wymaga czasu i codziennego zaangażowania. Nie ma magicznych pigułek ani zabiegów, które zastąpią zdrowe fundamenty.</li>
+                <li><strong>Empatia z własnego doświadczenia</strong> – w moim gabinecie nie oceniam. Słucham, bo sama doskonale wiem, jak wymagający bywa proces powrotu do równowagi.</li>
+            </ul>
+            <p>Zapraszam Cię do miejsca, gdzie Twoja historia zostanie zrozumiana, a terapia będzie oparta na prawdziwym poszanowaniu biologii Twojego ciała.</p>
 
             <h2>Naturoterapia – holistyczne spojrzenie</h2>
-            <p>Opis w trakcie przygotowywania...</p>
+            <p>Wieloletnia praca w branży kosmetologicznej uświadomiła mi jedną, kluczową zależność: nawet najbardziej zaawansowane procedury zabiegowe mają swoje granice, jeśli organizm od wewnątrz zmaga się z przewlekłym stanem zapalnym czy zaburzeniami wchłaniania. Moje podejście do naturoterapii nie jest jedynie wyborem zawodowym – to wynik osobistej drogi, która zaczęła się w 2017 roku od mojej własnej diagnozy celiakii.</p>
+            <p>To właśnie codzienne życie z chorobą autoimmunologiczną, wymagające absolutnej dyscypliny, nauki gotowania od nowa i eliminowania najmniejszego ryzyka błędu, stało się ostatecznym dowodem na to, że skóra, jelita i układ odpornościowy to naczynia połączone. W naturoterapii szukam odpowiedzi na pytania, których sama musiałam sobie udzielić, poszukując powrotu do zdrowia.</p>
+            
+            <h3>Dlaczego w mojej praktyce łączę kosmetologię z naturoterapią?</h3>
+            <ul>
+                <li><strong>Zrozumienie źródła problemu:</strong> Celiakia i nietolerancje pokarmowe to jedne z najbardziej wyrazistych przykładów tego, jak stan układu pokarmowego manifestuje się na zewnątrz. Zamiast skupiać się na maskowaniu zmian skórnych, szukam ich pierwotnej przyczyny. Wiedza o tym, jak stan zapalny w jelitach rzutuje na kondycję cery, pozwala mi projektować terapie, które realnie wspierają regenerację tkanek.</li>
+                <li><strong>Organizm jako nierozerwalny system:</strong> Moje doświadczenie nauczyło mnie, że nie da się trwale poprawić wyglądu skóry, ignorując biochemię organizmu. W naturoterapii patrzę na Ciebie jako na całość. Analizuję styl życia, sposób odżywiania i obciążenia układu nerwowego, ponieważ tylko takie, zintegrowane spojrzenie pozwala przywrócić fizjologiczną równowagę.</li>
+                <li><strong>Zasada braku dróg na skróty:</strong> Moja własna droga do zdrowia i codzienna dbałość o najwyższą jakość każdego spożywanego składnika to praktyczna lekcja „braku drogi na skróty”. Tę samą bezkompromisowość przenoszę do gabinetu. Naturoterapia to proces, który wymaga czasu i zaangażowania, ale w zamian oferuje coś, czego nie dają doraźne rozwiązania – powrót do autentycznego zdrowia i naturalnej zdolności organizmu do samonaprawy.</li>
+            </ul>
+            <p>W moim gabinecie wiedza akademicka dyplomowanego kosmetologa spotyka się z osobistym, praktycznym doświadczeniem naturopaty. To połączenie pozwala mi tworzyć programy naprawcze oparte na głębokim szacunku do biologii Twojego ciała, zapewniając wsparcie, które jest rzetelne, bezpieczne i dopasowane do Twojego unikalnego rytmu.</p>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" class="btn-booksy btn-booksy-large">Umów się na pierwszą konsultację</a>
+            </div>
 
         </section>
     </main>
 
     <footer>
         <p><strong>Naturalnie. Karina Zontek</strong></p>
-        <p>Telefon: +48 606 615 472 | Email: karina.zontek@icloud.com</p>
+        <p>Telefon: <a href="tel:+48788535355" style="color: #ffffff !important; text-decoration: none;">+48 788 535 355</a> | Email: <a href="mailto:karina.zontek@icloud.com" style="color: #ffffff !important; text-decoration: none;">karina.zontek@icloud.com</a></p>
         <p>Lokalizacja: Międzyrzecze Górne</p>
         
         <p>
@@ -245,7 +430,7 @@
             </a>
         </p>
         
-        <p>&copy; 2026 Wszelkie prawa zastrzeżone.</p>
+        <p style="font-size: 12px; margin-top: 10px;">&copy; 2026 Wszelkie prawa zastrzeżone.</p>
     </footer>
 
 </body>

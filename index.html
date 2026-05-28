@@ -24,7 +24,7 @@
             font-weight: 700;
         }
 
-        /* NAGŁÓWEK I MENU - UJEDNOLICONE */
+        /* NAGŁÓWEK I MENU */
         header {
             background-color: #ffffff;
             text-align: center;
@@ -136,13 +136,6 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        @media (max-width: 768px) {
-            .about-section {
-                flex-direction: column; 
-                text-align: center;
-            }
-        }
-
         ul {
             list-style-type: none;
             padding: 0;
@@ -216,7 +209,89 @@
             color: #CCD8C7;
         }
 
-        
+        /* PRZYCISK BOOKSY - WSPÓLNE STYLE KOLORYSTYCZNE */
+        .btn-booksy {
+            display: inline-block;
+            background-color: #17687A; 
+            color: #ffffff !important; 
+            border-radius: 30px;
+            font-weight: bold;
+            border: 2px solid #17687A;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s;
+        }
+
+        .btn-booksy:hover {
+            background-color: #CCD8C7; 
+            color: #17687A !important; 
+            border-color: #CCD8C7;
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+
+        /* Wersja w menu głównym (mniejsza) */
+        nav .btn-booksy {
+            padding: 8px 25px;
+            margin-left: 20px;
+        }
+
+        /* Wersja na środku strony (większa) */
+        .btn-booksy-large {
+            padding: 15px 30px;
+            font-size: 16px;
+            margin-top: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* 📱 OPTYMALIZACJA NA TELEFONY KOMÓRKOWE (SMARTFONY) */
+        @media (max-width: 768px) {
+            /* Zwiększenie przestrzeni roboczej - mniejsze marginesy boczne */
+            main {
+                padding: 10px;
+            }
+            section {
+                padding: 30px 20px; 
+            }
+
+            /* Menu dostosowane do dotyku (palca) */
+            nav a {
+                display: inline-block;
+                margin: 8px 10px;
+                font-size: 14px; 
+            }
+
+            /* Duży przycisk Booksy w menu na całą szerokość */
+            nav .btn-booksy {
+                display: block;
+                margin: 15px auto 5px auto;
+                width: 80%; 
+                text-align: center;
+                padding: 12px 0;
+            }
+
+            /* Zmniejszenie wielkości nagłówków, żeby nie zajmowały pół ekranu */
+            header h2 {
+                font-size: 24px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+
+            /* Sekcja O Mnie - elementy jedno pod drugim */
+            .about-section {
+                flex-direction: column; 
+                text-align: center;
+            }
+
+            /* Zdjęcia lekko mniejsze */
+            .about-image img {
+                max-width: 95%;
+            }
+        }
 
     </style>
 </head>
@@ -230,16 +305,17 @@
             <a href="zabiegi.html">Zabiegi</a>
             <a href="cennik.html">Cennik</a>
             <a href="kontakt.html">Kontakt</a>
+            <a href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" class="btn-booksy">Umów się</a>
         </nav>
     </header>
 
     <main>
-        <img src="poziome-na-strone-lazurszalwia.png" alt="Wnętrze gabinetu Naturalnie." class="clinic-photo">
+        <img src="poziome-na-strone-lazurszalwia.png" alt="Logo gabinetu" class="clinic-photo">
 
         <section class="hero">
             <h1>Holistyczne podejście do Twojego piękna i zdrowia</h1>
             <p>Odkryj harmonię dzięki połączeniu nowoczesnej kosmetologii i sprawdzonej naturoterapii.</p>
-            <a href="kontakt.html"><button>Umów wizytę</button></a>
+            <a href="kontakt.html"><button>Skontaktuj się</button></a>
         </section>
 
         <section class="about-section">
@@ -267,12 +343,16 @@
             </ul>
             <br>
             <a href="zabiegi.html">Zobacz pełną ofertę zabiegów &rarr;</a>
+            <br><br>
+            <!-- NOWY PRZYCISK BOOKSY PO ŚRODKU -->
+            <a href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" class="btn-booksy btn-booksy-large">Umów się</a>
         </section>
+	
     </main>
 
     <footer>
         <p><strong>Naturalnie. Karina Zontek</strong></p>
-        <p>Telefon: +48 606 615 472 | Email: karina.zontek@icloud.com</p>
+        <p>Telefon: <a href="tel:+48788535355" style="color: #ffffff !important; text-decoration: none;">+48 788 535 355</a> | Email: <a href="mailto:karina.zontek@icloud.com" style="color: #ffffff !important; text-decoration: none;">karina.zontek@icloud.com</a></p>
         <p>Lokalizacja: Międzyrzecze Górne</p>
         
         <p>
@@ -280,8 +360,6 @@
                 <img src="logo-instagram.png" alt="Instagram" class="social-icon"> @karina_zontek_naturalnie
             </a>
         </p>
-        
-        
         
         <p style="font-size: 12px; margin-top: 10px;">&copy; 2026 Wszelkie prawa zastrzeżone.</p>
     </footer>

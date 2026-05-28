@@ -24,18 +24,35 @@
             font-weight: 700;
         }
 
-        /* NAGŁÓWEK I MENU */
+        /* NAGŁÓWEK "PRZYKLEJONY" DO GÓRY (STICKY) */
         header {
             background-color: #ffffff;
             text-align: center;
-            padding: 30px 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 20px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+            position: sticky; 
+            top: 0;
+            z-index: 1000; 
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px; 
+            margin-bottom: 10px;
+        }
+
+        .main-logo {
+            height: 50px; 
+            width: auto;
+            border-radius: 0; 
+            box-shadow: none; 
         }
 
         header h2 {
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 28px;
+            margin: 0;
+            font-size: 26px;
             letter-spacing: 1px;
         }
 
@@ -51,6 +68,41 @@
 
         nav a:hover, nav a.active {
             color: #17687A;
+        }
+
+        /* PRZYCISK BOOKSY - WSPÓLNE STYLE KOLORYSTYCZNE */
+        .btn-booksy {
+            display: inline-block;
+            background-color: #17687A; 
+            color: #ffffff !important; 
+            border-radius: 30px;
+            font-weight: bold;
+            border: 2px solid #17687A;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s;
+        }
+
+        .btn-booksy:hover {
+            background-color: #CCD8C7; 
+            color: #17687A !important; 
+            border-color: #CCD8C7;
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+
+        /* Wersja w menu głównym (mniejsza) */
+        nav .btn-booksy {
+            padding: 8px 25px;
+            margin-left: 20px;
+        }
+
+        /* Wersja na środku strony (większa) */
+        .btn-booksy-large {
+            padding: 15px 30px;
+            font-size: 16px;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* GŁÓWNA ZAWARTOŚĆ */
@@ -74,12 +126,6 @@
             gap: 40px;
             margin-top: 40px;
             text-align: left;
-        }
-
-        @media (max-width: 600px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         .contact-info-item h3 {
@@ -110,6 +156,62 @@
             margin-right: 10px;
         }
 
+        /* MAPA GOOGLE */
+        .map-container {
+            margin: 40px 0 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 350px;
+            border: none;
+            display: block;
+        }
+
+        /* 📱 OPTYMALIZACJA NA TELEFONY KOMÓRKOWE (SMARTFONY) */
+        @media (max-width: 768px) {
+            main {
+                padding: 10px;
+                margin: 20px auto;
+            }
+            section {
+                padding: 30px 20px; 
+            }
+            .header-top {
+                flex-direction: column; 
+                gap: 5px;
+            }
+            nav a {
+                display: inline-block;
+                margin: 8px 10px;
+                font-size: 14px; 
+            }
+            nav .btn-booksy {
+                display: block;
+                margin: 15px auto 5px auto;
+                width: 80%; 
+                text-align: center;
+                padding: 12px 0;
+            }
+            header h2 {
+                font-size: 24px;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                text-align: center;
+            }
+            .contact-info-item h3 {
+                margin: 0 auto 10px auto;
+            }
+            .map-container iframe {
+                height: 250px; /* Na telefonie mapa może być odrobinę niższa */
+            }
+        }
+
         /* STOPKA */
         footer {
             background-color: #17687A;
@@ -123,20 +225,51 @@
             margin: 5px 0;
             font-size: 14px;
         }
-
         
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: normal;
+        }
+        
+        footer a:hover {
+            color: #CCD8C7;
+        }
+
+        footer .social-link {
+            color: #ffffff;
+            font-weight: normal;
+            margin-top: 10px;
+        }
+
+        footer .social-link:hover {
+            color: #CCD8C7;
+        }
+
+        footer .social-icon {
+            transition: transform 0.3s;
+        }
+
+        footer .social-link:hover .social-icon {
+            transform: scale(1.1);
+        }
+
     </style>
 </head>
 <body>
 
     <header>
-        <h2>Naturalnie. Karina Zontek</h2>
+        <div class="header-top">
+            <h2>Naturalnie. Karina Zontek</h2>
+        </div>
         <nav>
             <a href="index.html">Strona Główna</a>
             <a href="o-mnie.html">O mnie</a>
             <a href="zabiegi.html">Zabiegi</a>
             <a href="cennik.html">Cennik</a>
             <a href="kontakt.html" class="active">Kontakt</a>
+            <!-- ZŁOTY PRZYCISK BOOKSY -->
+            <a href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" class="btn-booksy">Umów się</a>
         </nav>
     </header>
 
@@ -148,8 +281,8 @@
             <div class="contact-grid">
                 <div class="contact-info-item">
                     <h3>Dane kontaktowe</h3>
-                    <p><strong>Telefon:</strong><br>+48 606 615 472</p>
-                    <p><strong>Email:</strong><br><a href="mailto:karina.zontek@icloud.pl">karina.zontek@icloud.com</a></p>
+                    <p><strong>Telefon:</strong><br><a href="tel:+48788535355" style="color: #333; text-decoration: none;">+48 788 535 355</a></p>
+                    <p><strong>Email:</strong><br><a href="mailto:karina.zontek@icloud.com" style="color: #17687A;">karina.zontek@icloud.com</a></p>
                 </div>
 
                 <div class="contact-info-item">
@@ -165,18 +298,35 @@
 
                 <div class="contact-info-item">
                     <h3>Social Media</h3>
-                    <a href="https://instagram.com/karina_zontek_naturalnie" target="_blank" class="social-link">
-                        <img src="logo-instagram.png" alt="Instagram" class="social-icon"> @karina_zontek_naturalnie
-                    </a>
+                    <div>
+                        <a href="https://instagram.com/karina_zontek_naturalnie" target="_blank" class="social-link">
+                            <img src="logo-instagram.png" alt="Instagram" class="social-icon"> @karina_zontek_naturalnie
+                        </a>
+                    </div>
                 </div>
             </div>
+            
+            <!-- MAPA INTERAKTYWNA -->
+            <div class="map-container">
+                <iframe src="https://maps.google.com/maps?q=Mi%C4%99dzyrzecze%20G%C3%B3rne,%20%C5%9Bl%C4%85skie,%20Polska&t=&z=12&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            
+            <a href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" class="btn-booksy btn-booksy-large">Zarezerwuj termin wizyty</a>
+            
         </section>
     </main>
 
     <footer>
         <p><strong>Naturalnie. Karina Zontek</strong></p>
-        <p>Telefon: +48 606 615 472 | Email: karina.zontek@icloud.com</p>
+        <p>Telefon: <a href="tel:+48788535355" style="color: #ffffff !important; text-decoration: none;">+48 788 535 355</a> | Email: <a href="mailto:karina.zontek@icloud.com" style="color: #ffffff !important; text-decoration: none;">karina.zontek@icloud.com</a></p>
         <p>Lokalizacja: Międzyrzecze Górne</p>
+        
+        <p>
+            <a href="https://instagram.com/karina_zontek_naturalnie" target="_blank" class="social-link">
+                <img src="logo-instagram.png" alt="Instagram" class="social-icon"> @karina_zontek_naturalnie
+            </a>
+        </p>
+        
         <p style="font-size: 12px; margin-top: 10px;">&copy; 2026 Wszelkie prawa zastrzeżone.</p>
     </footer>
 
