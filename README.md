@@ -1,44 +1,62 @@
-# Naturalnie. Karina Zontek - Strona Internetowa
+# Naturalnie. Karina Zontek – strona internetowa
 
-Oficjalna strona internetowa mobilnego gabinetu kosmetologicznego i naturoterapeutycznego **"Naturalnie. Karina Zontek"**. Strona została zaprojektowana jako elegancka, nowoczesna i w pełni responsywna wizytówka online.
+Strona mobilnego gabinetu kosmetologii i naturoterapii **„Naturalnie. Karina Zontek”**.
 
-🌍 **Adres strony:** [naturalnie-karinazontek.pl](http://naturalnie-karinazontek.pl)
+🌍 **Adres:** [naturalnie-karinazontek.pl](http://naturalnie-karinazontek.pl)
+📱 **Instagram:** [@karina_zontek_naturalnie](https://instagram.com/karina_zontek_naturalnie)
 
 ## 🌿 O projekcie
 
-Projekt to statyczna strona internetowa zbudowana w czystym HTML5 i CSS3. Składa się z 5 zakładek ułatwiających klientkom zapoznanie się z szeroką ofertą gabinetu, cennikiem oraz holistyczną filozofią pracy.
+Statyczna, w pełni responsywna strona zbudowana w czystym HTML5, CSS3 i odrobinie JavaScriptu (bez frameworków i bez procesu budowania).
 
-### Główne cechy strony:
-* **Responsywność:** Strona wygląda i działa doskonale na każdym ekranie (komputery, tablety, smartfony).
-* **Przyklejony nagłówek (Sticky Header):** Nawigacja zawsze pozostaje na górze ekranu podczas przewijania.
-* **Nowoczesny design:** Spójna paleta kolorów oparta na barwach natury (szałwiowa zieleń `#CCD8C7`, głęboki morski `#17687A`, kość słoniowa `#faf9f6`).
-* **Elegancka typografia:** Zastosowano darmowe czcionki z biblioteki Google Fonts (*Libre Baskerville* dla nagłówków oraz *Lato* dla tekstów).
+* **Przyklejony nagłówek** z logo i menu „hamburger” na telefonach.
+* **Wspólny arkusz stylów** – zmiana wyglądu w jednym miejscu dla wszystkich podstron.
+* **Zoptymalizowane grafiki** – zdjęcia w WebP/JPG zamiast wielomegabajtowych PNG (strona ładuje się wielokrotnie szybciej).
+* **Dostępność i SEO** – semantyczne znaczniki, opisy `meta`, Open Graph, favicon, link „Przejdź do treści”, obsługa klawiatury.
 
-## 📂 Struktura plików
+### Paleta kolorów marki
 
-W repozytorium znajdują się następujące pliki HTML:
+| Kolor | HEX | Zastosowanie |
+|---|---|---|
+| Szałwiowa zieleń | `#CCD8C7` | nagłówki podstron, sekcje CTA, akcenty, ikony |
+| Głęboki morski | `#17687A` | sekcja powitalna, stopka, przyciski, nagłówki |
+| Kość słoniowa | `#faf9f6` | tło strony, menu |
 
-* `index.html` - Strona główna z powitaniem i skróconą ofertą.
-* `o-mnie.html` - Zakładka przedstawiająca doświadczenie, historię i misję Kariny.
-* `zabiegi.html` - Szczegółowy opis oferowanych usług w formie eleganckich kafelków (Grid).
-* `cennik.html` - Przejrzysta lista zabiegów wraz z czasem trwania i cenami.
-* `kontakt.html` - Informacje kontaktowe, obszar działania (usługi mobilne) oraz odnośniki do mediów społecznościowych.
+Kolory zdefiniowane są jako zmienne CSS na początku `assets/css/style.css` (`--sage`, `--sea`, `--ivory`).
 
-*Dodatkowo w repozytorium powinny znajdować się wszystkie użyte pliki graficzne (np. `logo-gabinetu.png`, `logo-biale.png`, `logo-instagram.png` oraz zdjęcia).*
+### Typografia
 
-## 🛠️ Technologie
+Google Fonts: *Libre Baskerville* (nagłówki) i *Lato* (tekst).
 
-* **HTML5** (Semantyczna struktura strony)
-* **CSS3** (Style osadzone w sekcji `<head>`, Flexbox do ułożenia elementów, CSS Grid do kafelków z usługami)
-* **Google Fonts**
+## 📂 Struktura repozytorium
 
-## 🚀 Jak uruchomić projekt lokalnie?
+```
+.
+├── index.html          # Strona główna
+├── o-mnie.html         # O mnie – misja, wykształcenie, doświadczenie
+├── zabiegi.html        # Opis zabiegów
+├── cennik.html         # Cennik
+├── kontakt.html        # Kontakt i mapa
+└── assets/
+    ├── css/
+    │   └── style.css   # Wszystkie style strony
+    ├── js/
+    │   └── main.js     # Menu mobilne, animacje, rok w stopce
+    └── img/
+        ├── karina-zontek.webp / .jpg   # Zdjęcie Kariny
+        ├── logo-morski.png             # Logo w kolorze morskim (nagłówek)
+        ├── logo-biale.png              # Logo białe (sekcja powitalna, stopka)
+        ├── favicon.png                 # Ikona karty przeglądarki
+        └── og-image.jpg                # Grafika do udostępniania w social mediach
+```
 
-Do podglądu tej strony na własnym komputerze nie potrzebujesz żadnego skomplikowanego środowiska ani serwera.
-1. Pobierz pliki z repozytorium (`Code` -> `Download ZIP`).
-2. Wypakuj folder.
-3. Upewnij się, że wszystkie pliki HTML oraz zdjęcia znajdują się w tym samym folderze.
-4. Kliknij dwukrotnie dowolny plik `.html` (np. `index.html`), aby otworzyć i podejrzeć stronę w swojej domyślnej przeglądarce.
+## ✏️ Jak edytować
 
----
-📱 **Instagram:** [@karina_zontek_naturalnie](https://instagram.com/karina_zontek_naturalnie)
+* **Tekst / ceny** – edytuj bezpośrednio odpowiedni plik `.html`.
+* **Wygląd** – `assets/css/style.css`.
+* **Nagłówek i stopka** są powtórzone w każdym pliku HTML – przy zmianie (np. numeru telefonu) zaktualizuj wszystkie pięć plików.
+* **Nowe zdjęcia** – dodaj do `assets/img/`, najlepiej przeskalowane do ok. 1000–1600 px szerokości.
+
+## 🚀 Podgląd lokalny
+
+Pobierz repozytorium (`Code` → `Download ZIP`), wypakuj i otwórz `index.html` w przeglądarce. Struktura folderów musi zostać zachowana.

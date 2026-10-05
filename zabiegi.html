@@ -1,371 +1,168 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zabiegi | Naturalnie. Karina Zontek</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <meta name="description" content="Oferta zabiegów: konsultacje, Rytuał Phyt's, masaże twarzy, mikronakłuwanie, mikroprądy, terapia LED, Access Bars, bańki i więcej.">
+    <meta name="theme-color" content="#17687A">
 
-    <style>
-        /* BAZOWE STYLE */
-        body {
-            font-family: 'Lato', sans-serif;
-            color: #333;
-            background-color: #faf9f6;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:title" content="Zabiegi | Naturalnie. Karina Zontek">
+    <meta property="og:description" content="Oferta zabiegów: konsultacje, Rytuał Phyt's, masaże twarzy, mikronakłuwanie, mikroprądy, terapia LED, Access Bars, bańki i więcej.">
+    <meta property="og:image" content="https://naturalnie-karinazontek.pl/assets/img/og-image.jpg">
 
-        h1, h2, h3 {
-            font-family: 'Libre Baskerville', serif;
-            color: #17687A;
-            font-weight: 700;
-        }
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="assets/img/favicon.png">
 
-        /* NAGŁÓWEK "PRZYKLEJONY" DO GÓRY (STICKY) */
-        header {
-            background-color: #ffffff;
-            text-align: center;
-            padding: 15px 20px; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
-            position: sticky; 
-            top: 0;
-            z-index: 1000; 
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-        .header-top {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px; 
-            margin-bottom: 10px;
-        }
-
-        .main-logo {
-            height: 50px; 
-            width: auto;
-            border-radius: 0; 
-            box-shadow: none; 
-        }
-
-        header h2 {
-            margin: 0;
-            font-size: 26px;
-            letter-spacing: 1px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #666;
-            margin: 0 15px;
-            font-size: 16px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover, nav a.active {
-            color: #17687A;
-        }
-
-        /* PRZYCISK BOOKSY - WSPÓLNE STYLE KOLORYSTYCZNE */
-        .btn-booksy {
-            display: inline-block;
-            background-color: #17687A; 
-            color: #ffffff !important; 
-            border-radius: 30px;
-            font-weight: bold;
-            border: 2px solid #17687A;
-            text-decoration: none;
-            transition: background-color 0.3s, color 0.3s, transform 0.2s;
-        }
-
-        .btn-booksy:hover {
-            background-color: #CCD8C7; 
-            color: #17687A !important; 
-            border-color: #CCD8C7;
-            transform: translateY(-2px);
-            text-decoration: none;
-        }
-
-        /* Wersja w menu głównym (mniejsza) */
-        nav .btn-booksy {
-            padding: 8px 25px;
-            margin-left: 20px;
-        }
-
-        /* Wersja na środku strony (większa) */
-        .btn-booksy-large {
-            padding: 15px 30px;
-            font-size: 16px;
-            margin-top: 40px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* GŁÓWNA ZAWARTOŚĆ STRONY */
-        main {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        section {
-            background-color: #ffffff;
-            margin-bottom: 40px;
-            padding: 50px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            text-align: center;
-        }
-
-        /* SEKCJA TYTUŁOWA (HERO) */
-        .hero {
-            background-color: #CCD8C7;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .hero h1 {
-            font-size: 36px;
-            margin-bottom: 15px;
-            color: #17687A;
-        }
-
-        .hero p {
-            font-size: 18px;
-            color: #2c3e50;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* SIATKA ZABIEGÓW (KAFELKI) */
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr; 
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        @media (min-width: 768px) {
-            .services-grid {
-                grid-template-columns: 1fr 1fr; 
-            }
-        }
-
-        .service-card {
-            background-color: #faf9f6;
-            border-left: 5px solid #17687A;
-            padding: 30px;
-            border-radius: 5px;
-            text-align: left;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px); 
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-        }
-
-        .service-card h3 {
-            margin-top: 0;
-            font-size: 20px;
-            margin-bottom: 15px;
-            line-height: 1.3;
-        }
-
-        .service-card p {
-            font-size: 15px;
-            color: #555;
-            margin-bottom: 0;
-        }
-
-        /* 📱 OPTYMALIZACJA NA TELEFONY KOMÓRKOWE (SMARTFONY) */
-        @media (max-width: 768px) {
-            main {
-                padding: 10px;
-            }
-            section {
-                padding: 30px 20px; 
-            }
-            .header-top {
-                flex-direction: column; 
-                gap: 5px;
-            }
-            nav a {
-                display: inline-block;
-                margin: 8px 10px;
-                font-size: 14px; 
-            }
-            nav .btn-booksy {
-                display: block;
-                margin: 15px auto 5px auto;
-                width: 80%; 
-                text-align: center;
-                padding: 12px 0;
-            }
-            header h2 {
-                font-size: 24px;
-            }
-            .hero h1 {
-                font-size: 28px;
-            }
-            .hero p {
-                font-size: 16px;
-            }
-            .service-card {
-                padding: 20px;
-            }
-        }
-
-        /* STOPKA */
-        footer {
-            background-color: #17687A;
-            color: #ffffff;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 40px;
-        }
-
-        footer p {
-            margin: 5px 0;
-            font-size: 14px;
-        }
-        
-        footer a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: normal;
-        }
-        
-        footer a:hover {
-            color: #CCD8C7;
-        }
-
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            font-size: 16px;
-            color: #ffffff;
-            text-decoration: none;
-            margin-top: 10px;
-        }
-
-        .social-icon {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
-            transition: transform 0.3s;
-        }
-
-        .social-link:hover .social-icon {
-            transform: scale(1.1);
-        }
-
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <a class="skip-link" href="#tresc">Przejdź do treści</a>
 
-    <header>
-        <div class="header-top">
-            <h2>Naturalnie. Karina Zontek</h2>
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a class="brand" href="index.html" aria-label="Naturalnie. Karina Zontek – strona główna">
+                <img src="assets/img/logo-morski.png" alt="Naturalnie. Karina Zontek" width="600" height="339">
+            </a>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Otwórz menu">
+                <span></span>
+            </button>
+
+            <nav class="nav" id="main-nav" aria-label="Menu główne">
+            <a class="nav__link" href="index.html">Strona główna</a>
+            <a class="nav__link" href="o-mnie.html">O mnie</a>
+            <a class="nav__link" href="zabiegi.html" aria-current="page">Zabiegi</a>
+            <a class="nav__link" href="cennik.html">Cennik</a>
+            <a class="nav__link" href="kontakt.html">Kontakt</a>
+                <a class="btn btn--primary" href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" rel="noopener">Umów się</a>
+            </nav>
         </div>
-        <nav>
-            <a href="index.html">Strona Główna</a>
-            <a href="o-mnie.html">O mnie</a>
-            <a href="zabiegi.html" class="active">Zabiegi</a>
-            <a href="cennik.html">Cennik</a>
-            <a href="kontakt.html">Kontakt</a>
-            <!-- ZŁOTY PRZYCISK BOOKSY -->
-            <a href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" class="btn-booksy">Umów się</a>
-        </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1>Moja oferta</h1>
-            <p>Sprawdź, jak mogę wesprzeć Twój organizm i zadbać o Twoją skórę. Każda terapia jest dobierana indywidualnie do Twoich potrzeb.</p>
+    <main id="tresc">
+        <section class="page-hero">
+            <div class="container">
+                <span class="eyebrow">Zabiegi</span>
+                <h1>Moja oferta</h1>
+                <p>Sprawdź, jak mogę wesprzeć Twój organizm i zadbać o Twoją skórę. Każda terapia jest dobierana indywidualnie do Twoich potrzeb.</p>
+            </div>
         </section>
 
-        <section>
-            <h2>Odkryj naturalne piękno</h2>
-            
-            <div class="services-grid">
-                
-                <div class="service-card">
-                    <h3>Konsultacja</h3>
-                    <p>To od tego kroku zaczynamy. Szczegółowy wywiad pozwala mi poznać przyczyny Twoich problemów, dobrać odpowiednią pielęgnację domową i ułożyć skuteczny, holistyczny plan działania.</p>
+        <section class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2>Odkryj naturalne piękno</h2>
+                    <p>Nie wiesz, od czego zacząć? Najlepszym pierwszym krokiem jest konsultacja – razem dobierzemy terapię do Twojej skóry.</p>
                 </div>
-
-                <div class="service-card">
-                    <h3>Rytuał Phyt's</h3>
-                    <p>Ekskluzywny, w 100% naturalny zabieg dopasowany do potrzeb skóry. Oparty na certyfikowanych, organicznych kosmetykach renomowanej francuskiej marki, przywraca cerze pełnię blasku.</p>
+                <div class="cards cards--2">
+                    <article class="card card--feature reveal">
+                        <span class="card__num">01</span>
+                        <h3>Konsultacja</h3>
+                        <p>To od tego kroku zaczynamy. Szczegółowy wywiad pozwala mi poznać przyczyny Twoich problemów, dobrać odpowiednią pielęgnację domową i ułożyć skuteczny, holistyczny plan działania.</p>
+                    </article>
+                    <article class="card card--feature reveal">
+                        <span class="card__num">02</span>
+                        <h3>Rytuał Phyt's</h3>
+                        <p>Ekskluzywny, w 100% naturalny zabieg dopasowany do potrzeb skóry. Oparty na certyfikowanych, organicznych kosmetykach renomowanej francuskiej marki, przywraca cerze pełnię blasku.</p>
+                    </article>
+                    <article class="card card--feature reveal">
+                        <span class="card__num">03</span>
+                        <h3>Zabiegi z masażem twarzy</h3>
+                        <p>Relaksujące terapie pielęgnacyjne połączone z masażami. Obejmują m.in. masaż liftingujący z algą oraz masaż modelujący, które naturalnie poprawiają owal twarzy i ujędrniają skórę.</p>
+                    </article>
+                    <article class="card card--feature reveal">
+                        <span class="card__num">04</span>
+                        <h3>Indywidualne zabiegi pielęgnacyjne</h3>
+                        <p>Zabiegi szyte na miarę. Głęboki relaks połączony z intensywnym odżywieniem skóry za pomocą indywidualnie dobranych do Twojej cery składników aktywnych.</p>
+                    </article>
+                    <article class="card card--feature reveal">
+                        <span class="card__num">05</span>
+                        <h3>Oczyszczanie i peelingi chemiczne</h3>
+                        <p>Skuteczne procedury przywracające skórze czystość i świeżość. Obejmują klasyczne oczyszczanie manualne oraz stosowanie delikatnych peelingów chemicznych wygładzających naskórek.</p>
+                    </article>
+                    <article class="card card--feature reveal">
+                        <span class="card__num">06</span>
+                        <h3>Mikronakłuwanie</h3>
+                        <p>Terapia silnie stymulująca naturalną odnowę kolagenu i elastyny. Znakomicie redukuje zmarszczki, blizny czy przebarwienia, widocznie poprawiając strukturę i gęstość skóry.</p>
+                    </article>
+                    <article class="card card--feature reveal">
+                        <span class="card__num">07</span>
+                        <h3>Terapia mikroprądami</h3>
+                        <p>Masaż wykorzystujący zaawansowaną technologię mikroprądów. Głęboko stymuluje mięśnie, dając natychmiastowy efekt liftingu, ujędrnienia i odmłodzenia rysów twarzy.</p>
+                    </article>
+                    <article class="card card--feature reveal">
+                        <span class="card__num">08</span>
+                        <h3>Zabieg Maris i terapia LED</h3>
+                        <p>Wykorzystanie innowacyjnych preparatów i właściwości światłoterapii LED. Zabiegi idealne do wyciszania stanów zapalnych, leczenia problemów skórnych i przyspieszania regeneracji komórek.</p>
+                    </article>
+                    <article class="card card--feature reveal">
+                        <span class="card__num">09</span>
+                        <h3>Access Bars</h3>
+                        <p>Terapia manualna polegająca na delikatnym dotyku 32 punktów na głowie. Skutecznie uwalnia od napięć, stresu i natłoku myśli, przynosząc niesamowite odprężenie dla całego układu nerwowego.</p>
+                    </article>
+                    <article class="card card--feature reveal">
+                        <span class="card__num">10</span>
+                        <h3>Bańki lekarskie i pielęgnacja dłoni</h3>
+                        <p>Holistyczne dopełnienie oferty. Tradycyjne bańki lekarskie dla wsparcia odporności organizmu oraz regenerujące zabiegi na dłonie, z których możesz skorzystać podczas głównej terapii.</p>
+                    </article>
                 </div>
-
-                <div class="service-card">
-                    <h3>Zabiegi z masażem twarzy</h3>
-                    <p>Relaksujące terapie pielęgnacyjne połączone z masażami. Obejmują m.in. masaż liftingujący z algą oraz masaż modelujący, które naturalnie poprawiają owal twarzy i ujędrniają skórę.</p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Indywidualne zabiegi pielęgnacyjne</h3>
-                    <p>Zabiegi szyte na miarę. Głęboki relaks połączony z intensywnym odżywieniem skóry za pomocą indywidualnie dobranych do Twojej cery składników aktywnych.</p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Oczyszczanie i peelingi chemiczne</h3>
-                    <p>Skuteczne procedury przywracające skórze czystość i świeżość. Obejmują klasyczne oczyszczanie manualne oraz stosowanie delikatnych peelingów chemicznych wygładzających naskórek.</p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Mikronakłuwanie</h3>
-                    <p>Terapia silnie stymulująca naturalną odnowę kolagenu i elastyny. Znakomicie redukuje zmarszczki, blizny czy przebarwienia, widocznie poprawiając strukturę i gęstość skóry.</p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Terapia mikroprądami</h3>
-                    <p>Masaż wykorzystujący zaawansowaną technologię mikroprądów. Głęboko stymuluje mięśnie, dając natychmiastowy efekt liftingu, ujędrnienia i odmłodzenia rysów twarzy.</p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Zabieg Maris i Terapia LED</h3>
-                    <p>Wykorzystanie innowacyjnych preparatów i właściwości światłoterapii LED. Zabiegi idealne do wyciszania stanów zapalnych, leczenia problemów skórnych i przyspieszania regeneracji komórek.</p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Access Bars</h3>
-                    <p>Terapia manualna polegająca na delikatnym dotyku 32 punktów na głowie. Skutecznie uwalnia od napięć, stresu i natłoku myśli, przynosząc niesamowite odprężenie dla całego układu nerwowego.</p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Bańki lekarskie i pielęgnacja dłoni</h3>
-                    <p>Holistyczne dopełnienie oferty. Tradycyjne bańki lekarskie dla wsparcia odporności organizmu oraz regenerujące zabiegi na dłonie, z których możesz skorzystać podczas głównej terapii.</p>
-                </div>
-
             </div>
+        </section>
 
-            <!-- NOWY PRZYCISK BOOKSY NA DOLE ZABIEGÓW -->
-            <a href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" class="btn-booksy btn-booksy-large">Umów się</a>
-
+        <section class="section section--sage">
+            <div class="container cta reveal">
+                <span class="eyebrow">Rezerwacja</span>
+                <h2>Wybierz zabieg dla siebie</h2>
+                <p>Sprawdź ceny i czas trwania zabiegów lub od razu zarezerwuj termin.</p>
+                <div class="btn-row btn-row--center">
+                    <a class="btn btn--primary" href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" rel="noopener">Umów się</a>
+                    <a class="btn btn--outline" href="cennik.html">Zobacz cennik</a>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p><strong>Naturalnie. Karina Zontek</strong></p>
-        <p>Telefon: <a href="tel:+48606615472" style="color: #ffffff !important; text-decoration: none;">+48 606 615 472</a> | Email: <a href="mailto:karina.zontek@icloud.com" style="color: #ffffff !important; text-decoration: none;">karina.zontek@icloud.com</a></p>
-        <p>Lokalizacja: Międzyrzecze Górne</p>
-        
-        <p>
-            <a href="https://instagram.com/karina_zontek_naturalnie" target="_blank" class="social-link">
-                <img src="logo-instagram.png" alt="Instagram" class="social-icon"> @karina_zontek_naturalnie
-            </a>
-        </p>
-        
-        <p style="font-size: 12px; margin-top: 10px;">&copy; 2026 Wszelkie prawa zastrzeżone.</p>
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <img class="footer-logo" src="assets/img/logo-biale.png" alt="Naturalnie. Karina Zontek" width="900" height="509" loading="lazy">
+                <p>Kosmetologia i naturoterapia. Indywidualnie dobierane terapie dla skóry i całego organizmu.</p>
+                <a class="social-link" href="https://instagram.com/karina_zontek_naturalnie" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> @karina_zontek_naturalnie
+                </a>
+            </div>
+            <div>
+                <h3>Kontakt</h3>
+                <ul class="footer-list">
+                    <li><a href="tel:+48788535355">+48 788 535 355</a></li>
+                    <li><a href="mailto:karina.zontek@icloud.com">karina.zontek@icloud.com</a></li>
+                    <li>Międzyrzecze Górne</li>
+                    <li><a href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" rel="noopener">Rezerwacja online (Booksy)</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Nawigacja</h3>
+                <ul class="footer-list">
+                        <li><a href="index.html">Strona główna</a></li>
+                        <li><a href="o-mnie.html">O mnie</a></li>
+                        <li><a href="zabiegi.html">Zabiegi</a></li>
+                        <li><a href="cennik.html">Cennik</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; <span id="year">2026</span> Naturalnie. Karina Zontek. Wszelkie prawa zastrzeżone.
+        </div>
     </footer>
 
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>

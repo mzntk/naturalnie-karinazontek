@@ -1,400 +1,157 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cennik | Naturalnie. Karina Zontek</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <meta name="description" content="Cennik zabiegów kosmetologicznych i naturoterapeutycznych wraz z orientacyjnym czasem trwania.">
+    <meta name="theme-color" content="#17687A">
 
-    <style>
-        /* BAZOWE STYLE */
-        body {
-            font-family: 'Lato', sans-serif;
-            color: #333;
-            background-color: #faf9f6;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:title" content="Cennik | Naturalnie. Karina Zontek">
+    <meta property="og:description" content="Cennik zabiegów kosmetologicznych i naturoterapeutycznych wraz z orientacyjnym czasem trwania.">
+    <meta property="og:image" content="https://naturalnie-karinazontek.pl/assets/img/og-image.jpg">
 
-        h1, h2, h3 {
-            font-family: 'Libre Baskerville', serif;
-            color: #17687A;
-            font-weight: 700;
-        }
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="assets/img/favicon.png">
 
-        /* NAGŁÓWEK "PRZYKLEJONY" DO GÓRY (STICKY) */
-        header {
-            background-color: #ffffff;
-            text-align: center;
-            padding: 15px 20px; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
-            position: sticky; 
-            top: 0;
-            z-index: 1000; 
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-        .header-top {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px; 
-            margin-bottom: 10px;
-        }
-
-        .main-logo {
-            height: 50px; 
-            width: auto;
-            border-radius: 0; 
-            box-shadow: none; 
-        }
-
-        header h2 {
-            margin: 0;
-            font-size: 26px;
-            letter-spacing: 1px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #666;
-            margin: 0 15px;
-            font-size: 16px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover, nav a.active {
-            color: #17687A;
-        }
-
-        /* PRZYCISK BOOKSY - WSPÓLNE STYLE KOLORYSTYCZNE */
-        .btn-booksy {
-            display: inline-block;
-            background-color: #17687A; 
-            color: #ffffff !important; 
-            border-radius: 30px;
-            font-weight: bold;
-            border: 2px solid #17687A;
-            text-decoration: none;
-            transition: background-color 0.3s, color 0.3s, transform 0.2s;
-        }
-
-        .btn-booksy:hover {
-            background-color: #CCD8C7; 
-            color: #17687A !important; 
-            border-color: #CCD8C7;
-            transform: translateY(-2px);
-            text-decoration: none;
-        }
-
-        /* Wersja w menu głównym (mniejsza) */
-        nav .btn-booksy {
-            padding: 8px 25px;
-            margin-left: 20px;
-        }
-
-        /* Wersja na środku strony (większa) */
-        .btn-booksy-large {
-            padding: 15px 30px;
-            font-size: 16px;
-            margin-top: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* GŁÓWNA ZAWARTOŚĆ STRONY */
-        main {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        section {
-            background-color: #ffffff;
-            margin-bottom: 40px;
-            padding: 50px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            text-align: center;
-        }
-
-        /* SEKCJA TYTUŁOWA (HERO) */
-        .hero {
-            background-color: #CCD8C7;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .hero h1 {
-            font-size: 36px;
-            margin-bottom: 15px;
-            color: #17687A;
-        }
-
-        .hero p {
-            font-size: 18px;
-            color: #2c3e50;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* LISTA CENOWA */
-        .price-list {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        .price-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #CCD8C7; 
-            padding: 15px 0;
-            transition: background-color 0.3s;
-        }
-
-        .price-item:last-child {
-            border-bottom: none;
-        }
-
-        .price-item:hover {
-            background-color: #f4f9f5; 
-        }
-
-        .price-name {
-            font-weight: 700;
-            color: #17687A; 
-            font-size: 18px;
-            flex: 2;
-        }
-
-        .price-duration {
-            color: #666;
-            font-size: 15px;
-            flex: 1;
-            text-align: right;
-            padding-right: 20px;
-        }
-
-        .price-cost {
-            font-weight: 700;
-            color: #17687A;
-            font-size: 18px;
-            flex: 1;
-            text-align: right;
-            white-space: nowrap; 
-        }
-
-        /* 📱 OPTYMALIZACJA NA TELEFONY KOMÓRKOWE (SMARTFONY) */
-        @media (max-width: 768px) {
-            main {
-                padding: 10px;
-            }
-            section {
-                padding: 30px 20px; 
-            }
-            .header-top {
-                flex-direction: column; 
-                gap: 5px;
-            }
-            nav a {
-                display: inline-block;
-                margin: 8px 10px;
-                font-size: 14px; 
-            }
-            nav .btn-booksy {
-                display: block;
-                margin: 15px auto 5px auto;
-                width: 80%; 
-                text-align: center;
-                padding: 12px 0;
-            }
-            header h2 {
-                font-size: 24px;
-            }
-            .hero h1 {
-                font-size: 28px;
-            }
-            .hero p {
-                font-size: 16px;
-            }
-        }
-
-        /* SPECJALNA OPTYMALIZACJA CENNIKA DLA MNIEJSZYCH EKRANÓW */
-        @media (max-width: 600px) {
-            .price-item {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 15px 10px;
-            }
-            .price-duration, .price-cost {
-                text-align: left;
-                padding-right: 0;
-                margin-top: 5px;
-            }
-            .price-duration {
-                font-size: 14px;
-            }
-        }
-
-        /* STOPKA */
-        footer {
-            background-color: #17687A;
-            color: #ffffff;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 40px;
-        }
-
-        footer p {
-            margin: 5px 0;
-            font-size: 14px;
-        }
-        
-        footer a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: normal;
-        }
-        
-        footer a:hover {
-            color: #CCD8C7;
-        }
-
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            font-size: 16px;
-            color: #ffffff;
-            text-decoration: none;
-            margin-top: 10px;
-        }
-
-        .social-icon {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
-            transition: transform 0.3s;
-        }
-
-        .social-link:hover .social-icon {
-            transform: scale(1.1);
-        }
-
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <a class="skip-link" href="#tresc">Przejdź do treści</a>
 
-    <header>
-        <div class="header-top">
-            <h2>Naturalnie. Karina Zontek</h2>
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a class="brand" href="index.html" aria-label="Naturalnie. Karina Zontek – strona główna">
+                <img src="assets/img/logo-morski.png" alt="Naturalnie. Karina Zontek" width="600" height="339">
+            </a>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Otwórz menu">
+                <span></span>
+            </button>
+
+            <nav class="nav" id="main-nav" aria-label="Menu główne">
+            <a class="nav__link" href="index.html">Strona główna</a>
+            <a class="nav__link" href="o-mnie.html">O mnie</a>
+            <a class="nav__link" href="zabiegi.html">Zabiegi</a>
+            <a class="nav__link" href="cennik.html" aria-current="page">Cennik</a>
+            <a class="nav__link" href="kontakt.html">Kontakt</a>
+                <a class="btn btn--primary" href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" rel="noopener">Umów się</a>
+            </nav>
         </div>
-        <nav>
-            <a href="index.html">Strona Główna</a>
-            <a href="o-mnie.html">O mnie</a>
-            <a href="zabiegi.html">Zabiegi</a>
-            <a href="cennik.html" class="active">Cennik</a>
-            <a href="kontakt.html">Kontakt</a>
-            <!-- ZŁOTY PRZYCISK BOOKSY -->
-            <a href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" class="btn-booksy">Umów się</a>
-        </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1>Cennik usług</h1>
-            <p>Zapoznaj się z moją ofertą. Czas trwania zabiegu jest orientacyjny i może zostać delikatnie zmodyfikowany w zależności od potrzeb Twojej skóry.</p>
+    <main id="tresc">
+        <section class="page-hero">
+            <div class="container">
+                <span class="eyebrow">Cennik</span>
+                <h1>Cennik usług</h1>
+                <p>Czas trwania zabiegu jest orientacyjny i może zostać delikatnie zmodyfikowany w zależności od potrzeb Twojej skóry.</p>
+            </div>
         </section>
 
-        <section>
-            <div class="price-list">
-                
-                <div class="price-item">
-                    <div class="price-name">Konsultacja kosmetologiczna</div>
-                    <div class="price-duration">60-90 minut</div>
-                    <div class="price-cost">100 zł+</div>
+        <section class="section">
+            <div class="container--narrow">
+                <ul class="price-list reveal">
+                    <li class="price-item">
+                        <span class="price-item__name">Konsultacja kosmetologiczna</span>
+                        <span class="price-item__time">60–90 min</span>
+                        <span class="price-item__cost">od 100 zł</span>
+                    </li>
+                    <li class="price-item">
+                        <span class="price-item__name">Rytuał Phyt's</span>
+                        <span class="price-item__time">60 min</span>
+                        <span class="price-item__cost">od 250 zł</span>
+                    </li>
+                    <li class="price-item">
+                        <span class="price-item__name">Masaż liftingujący z algą</span>
+                        <span class="price-item__time">90 min</span>
+                        <span class="price-item__cost">200 zł</span>
+                    </li>
+                    <li class="price-item">
+                        <span class="price-item__name">Indywidualnie skomponowany zabieg pielęgnacyjny</span>
+                        <span class="price-item__time">90 min</span>
+                        <span class="price-item__cost">od 200 zł</span>
+                    </li>
+                    <li class="price-item">
+                        <span class="price-item__name">Mezoterapia mikroigłowa</span>
+                        <span class="price-item__time">60 min</span>
+                        <span class="price-item__cost">330 zł</span>
+                    </li>
+                    <li class="price-item">
+                        <span class="price-item__name">Zabieg Maris z naświetlaniem LED</span>
+                        <span class="price-item__time">60 min</span>
+                        <span class="price-item__cost">350 zł</span>
+                    </li>
+                    <li class="price-item">
+                        <span class="price-item__name">Bańki</span>
+                        <span class="price-item__time">30 min</span>
+                        <span class="price-item__cost">60 zł</span>
+                    </li>
+                    <li class="price-item">
+                        <span class="price-item__name">Nie wiem, co chcę…</span>
+                        <span class="price-item__time">90 min</span>
+                        <span class="price-item__cost">od 200 zł</span>
+                    </li>
+                    <li class="price-item">
+                        <span class="price-item__name">Henna brwi z regulacją</span>
+                        <span class="price-item__time">30 min</span>
+                        <span class="price-item__cost">70 zł</span>
+                    </li>
+                    <li class="price-item">
+                        <span class="price-item__name">Henna brwi i rzęs z regulacją</span>
+                        <span class="price-item__time">45 min</span>
+                        <span class="price-item__cost">90 zł</span>
+                    </li>
+                </ul>
+                <p class="price-note">„od” – ostateczna cena zależy od dobranych preparatów i zakresu zabiegu.</p>
+                <div class="btn-row btn-row--center">
+                    <a class="btn btn--primary" href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" rel="noopener">Umów się</a>
+                    <a class="btn btn--outline" href="zabiegi.html">Opisy zabiegów</a>
                 </div>
-
-                <div class="price-item">
-                    <div class="price-name">Rytuał Phyt's</div>
-                    <div class="price-duration">60 minut</div>
-                    <div class="price-cost">250 zł+</div>
-                </div>
-
-                <div class="price-item">
-                    <div class="price-name">Masaż liftingujący z algą</div>
-                    <div class="price-duration">90 minut</div>
-                    <div class="price-cost">200 zł</div>
-                </div>
-
-		<div class="price-item">
-                    <div class="price-name">Indywidualnie skomponowany zabieg pielęgnacyjny</div>
-                    <div class="price-duration">90 minut</div>
-                    <div class="price-cost">200 zł+</div>
-                </div>
-
-		<div class="price-item">
-                    <div class="price-name">Mezoterapia mikroigłowa</div>
-                    <div class="price-duration">60 minut</div>
-                    <div class="price-cost">330 zł</div>
-                </div>
-
-		<div class="price-item">
-                    <div class="price-name">Zabieg Maris z naświetlaniem LED</div>
-                    <div class="price-duration">60 minut</div>
-                    <div class="price-cost">350 zł</div>
-                </div>
-		
-		<div class="price-item">
-                    <div class="price-name">Bańki</div>
-                    <div class="price-duration">30 minut</div>
-                    <div class="price-cost">60 zł</div>
-                </div>
-
-		<div class="price-item">
-                    <div class="price-name">Nie wiem co chcę...</div>
-                    <div class="price-duration">90 minut</div>
-                    <div class="price-cost">200 zł+</div>
-                </div>
-
-		<div class="price-item">
-                    <div class="price-name">Henna brwi z regulacją</div>
-                    <div class="price-duration">30 minut</div>
-                    <div class="price-cost">70 zł</div>
-                </div>
-
-		<div class="price-item">
-                    <div class="price-name">Henna brwi i rzęs z regulacją</div>
-                    <div class="price-duration">45 minut</div>
-                    <div class="price-cost">90 zł</div>
-                </div>
-
             </div>
-            
-            <br><br>
-            <!-- NOWY PRZYCISK BOOKSY NA DOLE CENNIKA -->
-            <a href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" class="btn-booksy btn-booksy-large">Umów się</a>
-            
         </section>
     </main>
 
-    <footer>
-        <p><strong>Naturalnie. Karina Zontek</strong></p>
-        <p>Telefon: <a href="tel:+48788535355" style="color: #ffffff !important; text-decoration: none;">+48 788 535 355</a> | Email: <a href="mailto:karina.zontek@icloud.com" style="color: #ffffff !important; text-decoration: none;">karina.zontek@icloud.com</a></p>
-        <p>Lokalizacja: Międzyrzecze Górne</p>
-        
-        <p>
-            <a href="https://instagram.com/karina_zontek_naturalnie" target="_blank" class="social-link">
-                <img src="logo-instagram.png" alt="Instagram" class="social-icon"> @karina_zontek_naturalnie
-            </a>
-        </p>
-        
-        <p style="font-size: 12px; margin-top: 10px;">&copy; 2026 Wszelkie prawa zastrzeżone.</p>
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <img class="footer-logo" src="assets/img/logo-biale.png" alt="Naturalnie. Karina Zontek" width="900" height="509" loading="lazy">
+                <p>Kosmetologia i naturoterapia. Indywidualnie dobierane terapie dla skóry i całego organizmu.</p>
+                <a class="social-link" href="https://instagram.com/karina_zontek_naturalnie" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> @karina_zontek_naturalnie
+                </a>
+            </div>
+            <div>
+                <h3>Kontakt</h3>
+                <ul class="footer-list">
+                    <li><a href="tel:+48788535355">+48 788 535 355</a></li>
+                    <li><a href="mailto:karina.zontek@icloud.com">karina.zontek@icloud.com</a></li>
+                    <li>Międzyrzecze Górne</li>
+                    <li><a href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" rel="noopener">Rezerwacja online (Booksy)</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Nawigacja</h3>
+                <ul class="footer-list">
+                        <li><a href="index.html">Strona główna</a></li>
+                        <li><a href="o-mnie.html">O mnie</a></li>
+                        <li><a href="zabiegi.html">Zabiegi</a></li>
+                        <li><a href="cennik.html">Cennik</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; <span id="year">2026</span> Naturalnie. Karina Zontek. Wszelkie prawa zastrzeżone.
+        </div>
     </footer>
 
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>

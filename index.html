@@ -1,368 +1,189 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naturalnie. Karina Zontek | Kosmetologia i Naturoterapia</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Naturalnie. Karina Zontek | Kosmetologia i naturoterapia</title>
+    <meta name="description" content="Mobilny gabinet kosmetologii i naturoterapii – Karina Zontek, Międzyrzecze Górne. Holistyczne, indywidualnie dobierane terapie skóry i organizmu.">
+    <meta name="theme-color" content="#17687A">
 
-    <style>
-        /* BAZOWE STYLE */
-        body {
-            font-family: 'Lato', sans-serif;
-            color: #333;
-            background-color: #faf9f6;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:title" content="Naturalnie. Karina Zontek | Kosmetologia i naturoterapia">
+    <meta property="og:description" content="Mobilny gabinet kosmetologii i naturoterapii – Karina Zontek, Międzyrzecze Górne. Holistyczne, indywidualnie dobierane terapie skóry i organizmu.">
+    <meta property="og:image" content="https://naturalnie-karinazontek.pl/assets/img/og-image.jpg">
 
-        h1, h2, h3 {
-            font-family: 'Libre Baskerville', serif;
-            color: #17687A;
-            font-weight: 700;
-        }
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="assets/img/favicon.png">
 
-        /* NAGŁÓWEK I MENU */
-        header {
-            background-color: #ffffff;
-            text-align: center;
-            padding: 30px 20px; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-        header h2 {
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 28px;
-            letter-spacing: 1px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #666;
-            margin: 0 15px;
-            font-size: 16px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover, nav a.active {
-            color: #17687A;
-        }
-
-        /* GŁÓWNA ZAWARTOŚĆ STRONY */
-        main {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        section {
-            background-color: #ffffff;
-            margin-bottom: 40px;
-            padding: 50px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            text-align: center;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        .clinic-photo {
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        /* SEKCJA POWITALNA (HERO) */
-        .hero {
-            background-color: #CCD8C7;
-        }
-
-        .hero h1 {
-            font-size: 36px;
-            margin-bottom: 15px;
-            color: #17687A;
-        }
-
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            color: #2c3e50;
-        }
-
-        button {
-            background-color: #17687A;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 16px;
-            font-family: 'Lato', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        button:hover {
-            background-color: #114e5c;
-            transform: translateY(-2px);
-        }
-
-        /* SEKCJA O MNIE */
-        .about-section {
-            display: flex; 
-            align-items: center; 
-            gap: 40px; 
-            text-align: left; 
-        }
-
-        .about-text {
-            flex: 1; 
-        }
-
-        .about-image {
-            flex: 1; 
-        }
-
-        .about-image img {
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            background-color: #faf9f6;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 5px;
-            border-left: 5px solid #17687A;
-            text-align: left;
-        }
-
-        a {
-            color: #17687A;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* IKONA I LINK DO INSTAGRAMA */
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            margin-top: 15px;
-            font-size: 16px;
-            color: #17687A;
-        }
-
-        .social-link:hover {
-            color: #114e5c;
-            text-decoration: none;
-        }
-
-        .social-icon {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
-            border-radius: 0;
-            transition: transform 0.3s;
-        }
-
-        .social-link:hover .social-icon {
-            transform: scale(1.1);
-        }
-
-        /* STOPKA */
-        footer {
-            background-color: #17687A;
-            color: #ffffff;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 40px;
-        }
-
-        footer p {
-            margin: 5px 0;
-            font-size: 14px;
-        }
-        
-        footer .social-link {
-            color: #ffffff;
-            font-weight: normal;
-        }
-        
-        footer .social-link:hover {
-            color: #CCD8C7;
-        }
-
-        /* PRZYCISK BOOKSY - WSPÓLNE STYLE KOLORYSTYCZNE */
-        .btn-booksy {
-            display: inline-block;
-            background-color: #17687A; 
-            color: #ffffff !important; 
-            border-radius: 30px;
-            font-weight: bold;
-            border: 2px solid #17687A;
-            text-decoration: none;
-            transition: background-color 0.3s, color 0.3s, transform 0.2s;
-        }
-
-        .btn-booksy:hover {
-            background-color: #CCD8C7; 
-            color: #17687A !important; 
-            border-color: #CCD8C7;
-            transform: translateY(-2px);
-            text-decoration: none;
-        }
-
-        /* Wersja w menu głównym (mniejsza) */
-        nav .btn-booksy {
-            padding: 8px 25px;
-            margin-left: 20px;
-        }
-
-        /* Wersja na środku strony (większa) */
-        .btn-booksy-large {
-            padding: 15px 30px;
-            font-size: 16px;
-            margin-top: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* 📱 OPTYMALIZACJA NA TELEFONY KOMÓRKOWE (SMARTFONY) */
-        @media (max-width: 768px) {
-            /* Zwiększenie przestrzeni roboczej - mniejsze marginesy boczne */
-            main {
-                padding: 10px;
-            }
-            section {
-                padding: 30px 20px; 
-            }
-
-            /* Menu dostosowane do dotyku (palca) */
-            nav a {
-                display: inline-block;
-                margin: 8px 10px;
-                font-size: 14px; 
-            }
-
-            /* Duży przycisk Booksy w menu na całą szerokość */
-            nav .btn-booksy {
-                display: block;
-                margin: 15px auto 5px auto;
-                width: 80%; 
-                text-align: center;
-                padding: 12px 0;
-            }
-
-            /* Zmniejszenie wielkości nagłówków, żeby nie zajmowały pół ekranu */
-            header h2 {
-                font-size: 24px;
-            }
-            .hero h1 {
-                font-size: 28px;
-            }
-            .hero p {
-                font-size: 16px;
-            }
-
-            /* Sekcja O Mnie - elementy jedno pod drugim */
-            .about-section {
-                flex-direction: column; 
-                text-align: center;
-            }
-
-            /* Zdjęcia lekko mniejsze */
-            .about-image img {
-                max-width: 95%;
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <a class="skip-link" href="#tresc">Przejdź do treści</a>
 
-    <header>
-        <h2>Naturalnie. Karina Zontek</h2>
-        <nav>
-            <a href="index.html" class="active">Strona Główna</a>
-            <a href="o-mnie.html">O mnie</a>
-            <a href="zabiegi.html">Zabiegi</a>
-            <a href="cennik.html">Cennik</a>
-            <a href="kontakt.html">Kontakt</a>
-            <a href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" class="btn-booksy">Umów się</a>
-        </nav>
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a class="brand" href="index.html" aria-label="Naturalnie. Karina Zontek – strona główna">
+                <img src="assets/img/logo-morski.png" alt="Naturalnie. Karina Zontek" width="600" height="339">
+            </a>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Otwórz menu">
+                <span></span>
+            </button>
+
+            <nav class="nav" id="main-nav" aria-label="Menu główne">
+            <a class="nav__link" href="index.html" aria-current="page">Strona główna</a>
+            <a class="nav__link" href="o-mnie.html">O mnie</a>
+            <a class="nav__link" href="zabiegi.html">Zabiegi</a>
+            <a class="nav__link" href="cennik.html">Cennik</a>
+            <a class="nav__link" href="kontakt.html">Kontakt</a>
+                <a class="btn btn--primary" href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" rel="noopener">Umów się</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <img src="poziome-na-strone-lazurszalwia.png" alt="Logo gabinetu" class="clinic-photo">
-
+    <main id="tresc">
         <section class="hero">
-            <h1>Holistyczne podejście do Twojego piękna i zdrowia</h1>
-            <p>Odkryj harmonię dzięki połączeniu nowoczesnej kosmetologii i sprawdzonej naturoterapii.</p>
-            <a href="kontakt.html"><button>Skontaktuj się</button></a>
-        </section>
-
-        <section class="about-section">
-            <div class="about-image">
-                <img src="karina-z-tlem.png" alt="Karina Zontek - Kosmetolog i Naturoterapeuta">
-            </div>
-            <div class="about-text">
-                <h2>Witaj w moim gabinecie</h2>
-                <p>Nazywam się Karina Zontek – jestem kosmetologiem z wieloletnim doświadczeniem oraz naturoterapeutą. Pomagam zarówno Twojej skórze, jak i całemu organizmowi wrócić do naturalnej równowagi. W swojej pracy kieruję się w pełni holistycznym i indywidualnym podejściem, dlatego każdą terapię rozpoczynam od szczegółowej konsultacji. Zapraszam Cię do mojego świata, jeśli zależy Ci na zdrowym, naturalnym wyglądzie i jesteś gotowa/gotowy na świadome, stopniowe zmiany w swoim stylu życia.</p>
-                <br>
-                <a href="o-mnie.html">Dowiedz się więcej o moim doświadczeniu &rarr;</a>
-                <br>
-                <a href="https://instagram.com/karina_zontek_naturalnie" target="_blank" class="social-link">
-                    <img src="logo-instagram.png" alt="Instagram" class="social-icon"> Śledź mnie na Instagramie
-                </a>
+            <div class="container hero__inner">
+                <div>
+                    <span class="eyebrow">Kosmetologia i naturoterapia</span>
+                    <h1>Holistyczne podejście do Twojego piękna i zdrowia</h1>
+                    <p class="hero__lead">Odkryj harmonię dzięki połączeniu nowoczesnej kosmetologii i sprawdzonej naturoterapii.</p>
+                    <div class="btn-row">
+                        <a class="btn btn--light" href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" rel="noopener">Umów wizytę</a>
+                        <a class="btn btn--ghost-light" href="kontakt.html">Skontaktuj się</a>
+                    </div>
+                </div>
+                <img class="hero__logo" src="assets/img/logo-biale.png" alt="" width="900" height="509">
             </div>
         </section>
 
-        <section>
-            <h2>W czym mogę Ci pomóc?</h2>
-            <ul>
-                <li><strong>Kosmetologia Estetyczna:</strong> Nowoczesne zabiegi odmładzające i pielęgnacyjne, dobrane do potrzeb Twojej skóry.</li>
-                <li><strong>Naturoterapia:</strong> Holistyczne metody przywracania równowagi organizmu, relaksacja i naturalne wspomaganie zdrowia.</li>
-                <li><strong>Konsultacje Indywidualne:</strong> Dobór optymalnej pielęgnacji domowej oraz ułożenie spersonalizowanego planu zabiegowego.</li>
-            </ul>
-            <br>
-            <a href="zabiegi.html">Zobacz pełną ofertę zabiegów &rarr;</a>
-            <br><br>
-            <!-- NOWY PRZYCISK BOOKSY PO ŚRODKU -->
-            <a href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" class="btn-booksy btn-booksy-large">Umów się</a>
+        <section class="section">
+            <div class="container split">
+                <div class="split__media reveal">
+                    <picture>
+                        <source srcset="assets/img/karina-zontek.webp" type="image/webp">
+                        <img src="assets/img/karina-zontek.jpg" alt="Karina Zontek – kosmetolog i naturoterapeuta" width="1000" height="1333" loading="lazy">
+                    </picture>
+                </div>
+                <div class="split__body reveal">
+                    <span class="eyebrow">Witaj w moim gabinecie</span>
+                    <h2>Nazywam się Karina Zontek</h2>
+                    <p>Jestem kosmetologiem z wieloletnim doświadczeniem oraz naturoterapeutą. Pomagam zarówno Twojej skórze, jak i całemu organizmowi wrócić do naturalnej równowagi.</p>
+                    <p>W swojej pracy kieruję się w pełni holistycznym i indywidualnym podejściem, dlatego każdą terapię rozpoczynam od szczegółowej konsultacji. Zapraszam Cię do mojego świata, jeśli zależy Ci na zdrowym, naturalnym wyglądzie i jesteś gotowa/gotowy na świadome, stopniowe zmiany w swoim stylu życia.</p>
+                    <div class="btn-row">
+                        <a class="btn btn--outline" href="o-mnie.html">Poznaj mnie bliżej</a>
+                        <a class="social-link" href="https://instagram.com/karina_zontek_naturalnie" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> Śledź mnie na Instagramie</a>
+                    </div>
+                </div>
+            </div>
         </section>
-	
+
+        <section class="section section--white">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Oferta</span>
+                    <h2>W czym mogę Ci pomóc?</h2>
+                    <p>Łączę wiedzę kosmetologiczną z naturoterapią, aby wspierać skórę i organizm jako jedną całość.</p>
+                </div>
+                <div class="cards cards--3">
+                    <article class="card reveal">
+                        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8z"/><path d="M19 15l.8 1.9 1.9.8-1.9.8L19 20.4l-.8-1.9-1.9-.8 1.9-.8z"/></svg></div>
+                        <h3>Kosmetologia estetyczna</h3>
+                        <p>Nowoczesne zabiegi odmładzające i pielęgnacyjne, dobrane do potrzeb Twojej skóry.</p>
+                    </article>
+                    <article class="card reveal">
+                        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 5-13 14-14-1 9-6 14-14 14z"/><path d="M5 19l7-7"/></svg></div>
+                        <h3>Naturoterapia</h3>
+                        <p>Holistyczne metody przywracania równowagi organizmu, relaksacja i naturalne wspomaganie zdrowia.</p>
+                    </article>
+                    <article class="card reveal">
+                        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h7M8.5 14h4"/></svg></div>
+                        <h3>Konsultacje indywidualne</h3>
+                        <p>Dobór optymalnej pielęgnacji domowej oraz ułożenie spersonalizowanego planu zabiegowego.</p>
+                    </article>
+                </div>
+                <p class="price-note reveal" style="margin-top:36px"><a class="link-arrow" href="zabiegi.html">Zobacz pełną ofertę zabiegów</a></p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Jak pracuję</span>
+                    <h2>Krok po kroku do równowagi</h2>
+                </div>
+                <div class="cards cards--3">
+                    <article class="card reveal">
+                        <span class="card__num">1</span>
+                        <h3>Konsultacja</h3>
+                        <p>Szczegółowy wywiad pozwala mi poznać przyczyny Twoich problemów, a nie tylko ich objawy.</p>
+                    </article>
+                    <article class="card reveal">
+                        <span class="card__num">2</span>
+                        <h3>Indywidualny plan</h3>
+                        <p>Układam spersonalizowany plan zabiegowy i dobieram pielęgnację domową do Twojej skóry.</p>
+                    </article>
+                    <article class="card reveal">
+                        <span class="card__num">3</span>
+                        <h3>Terapia i wsparcie</h3>
+                        <p>Pracujemy stopniowo i świadomie – z szacunkiem dla naturalnego rytmu Twojego organizmu.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--sage">
+            <div class="container cta reveal">
+                <span class="eyebrow">Rezerwacja</span>
+                <h2>Zacznijmy od rozmowy</h2>
+                <p>Wybierz dogodny termin w Booksy lub napisz do mnie – chętnie odpowiem na Twoje pytania.</p>
+                <div class="btn-row btn-row--center">
+                    <a class="btn btn--primary" href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" rel="noopener">Umów się</a>
+                    <a class="btn btn--outline" href="cennik.html">Zobacz cennik</a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <p><strong>Naturalnie. Karina Zontek</strong></p>
-        <p>Telefon: <a href="tel:+48788535355" style="color: #ffffff !important; text-decoration: none;">+48 788 535 355</a> | Email: <a href="mailto:karina.zontek@icloud.com" style="color: #ffffff !important; text-decoration: none;">karina.zontek@icloud.com</a></p>
-        <p>Lokalizacja: Międzyrzecze Górne</p>
-        
-        <p>
-            <a href="https://instagram.com/karina_zontek_naturalnie" target="_blank" class="social-link">
-                <img src="logo-instagram.png" alt="Instagram" class="social-icon"> @karina_zontek_naturalnie
-            </a>
-        </p>
-        
-        <p style="font-size: 12px; margin-top: 10px;">&copy; 2026 Wszelkie prawa zastrzeżone.</p>
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <img class="footer-logo" src="assets/img/logo-biale.png" alt="Naturalnie. Karina Zontek" width="900" height="509" loading="lazy">
+                <p>Kosmetologia i naturoterapia. Indywidualnie dobierane terapie dla skóry i całego organizmu.</p>
+                <a class="social-link" href="https://instagram.com/karina_zontek_naturalnie" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> @karina_zontek_naturalnie
+                </a>
+            </div>
+            <div>
+                <h3>Kontakt</h3>
+                <ul class="footer-list">
+                    <li><a href="tel:+48788535355">+48 788 535 355</a></li>
+                    <li><a href="mailto:karina.zontek@icloud.com">karina.zontek@icloud.com</a></li>
+                    <li>Międzyrzecze Górne</li>
+                    <li><a href="https://booksy.com/pl-pl/dl/show-business/347689" target="_blank" rel="noopener">Rezerwacja online (Booksy)</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Nawigacja</h3>
+                <ul class="footer-list">
+                        <li><a href="index.html">Strona główna</a></li>
+                        <li><a href="o-mnie.html">O mnie</a></li>
+                        <li><a href="zabiegi.html">Zabiegi</a></li>
+                        <li><a href="cennik.html">Cennik</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; <span id="year">2026</span> Naturalnie. Karina Zontek. Wszelkie prawa zastrzeżone.
+        </div>
     </footer>
 
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>
